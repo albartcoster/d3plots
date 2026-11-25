@@ -1,7 +1,11 @@
 import { useMemo } from 'react';
 import * as d3 from 'd3';
+import { data } from './data';
 
-function Barplot({ data, title, source }) {
+const title = "Origin of the D3 students";
+const source = "https://www.react-graph-gallery.com/course/introduction/project";
+
+function Barplot() {
   const width = 500;
   const height = 400;
   const marginLeft = 120;
@@ -14,7 +18,7 @@ function Barplot({ data, title, source }) {
     return d3.scaleLinear()
       .domain([0, d3.max(data, d => d.students)])
       .range([0, width]);
-  }, [data, width]);
+  }, [width]);
 
   const chartHeight = height - marginTop - marginBottom;
 
@@ -23,7 +27,7 @@ function Barplot({ data, title, source }) {
       .domain(data.map(d => d.country))
       .range([0, chartHeight])
       .padding(0.1);
-  }, [data, chartHeight]);
+  }, [chartHeight]);
 
   return (
     <svg width={width + marginLeft + marginRight} height={height}>

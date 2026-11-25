@@ -1,3 +1,3 @@
 # React plus D3
 
-First graph made with React and D3.
+Graphs made with D3 and React, for the D3 React course.
